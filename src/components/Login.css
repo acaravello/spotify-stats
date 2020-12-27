@@ -1,0 +1,30 @@
+.Login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* font-family: "Vadodara Bold"; */
+}
+
+
+.LoginButton {
+    background-color: #1ED760;
+    font-size: 14px;
+    border-radius: 500px;
+    text-transform: uppercase;
+    padding: 16px 48px 18px;
+    margin-top: 10px;
+    border:none;
+    transition: opacity 600ms ease, color 1200ms ease, transform 1200ms ease;
+}
+
+.LoginButton:focus {
+    outline: none;
+}
+
+.LoginButton:hover {
+    opacity: 0.9;
+    color: #fff;
+    transform: scale(1.04);
+}

@@ -1,0 +1,41 @@
+
+@font-face {
+  font-family: "Vadodara Light";
+  src: url("assets/fonts/HindVadodara-Light.ttf");
+}
+
+@font-face {
+  font-family: "Vadodara Medium";
+  src: url("assets/fonts/HindVadodara-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Vadodara Regular";
+  src: url("assets/fonts/HindVadodara-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Vadodara SemiBold";
+  src: url("assets/fonts/HindVadodara-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Vadodara Bold";
+  src: url("assets/fonts/HindVadodara-Bold.ttf");
+}
+
+.App {
+  text-align: center;
+  font-family: "Vadodara Medium";
+  background-color: #181818;
+  color: #fff;
+}
+
+h1 {
+  font-family: "Vadodara Medium";
+}
+
+button {
+  font-family: "Vadodara Bold";
+  text-transform: uppercase;
+}
