@@ -1,0 +1,17 @@
+.Navbar {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    background-color: rgb(4, 3, 6);
+    text-align: center;
+    z-index: 99;
+}
