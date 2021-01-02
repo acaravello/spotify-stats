@@ -1,4 +1,6 @@
 
+import Spotify from "spotify-web-api-js";
+
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
 const clientId = process.env.REACT_APP_CLIENT_ID;
@@ -16,6 +18,8 @@ const scopes = [
     "playlist-modify-public"
 ];
 
+export const spotifyWebApi = new Spotify();
+
 export const getTokenFromResponse = () => {
   return window.location.hash
     .substring(1)
@@ -23,9 +27,28 @@ export const getTokenFromResponse = () => {
     .reduce((initial, item) => {
       var parts = item.split("=");
       initial[parts[0]] = decodeURIComponent(parts[1]);
-      return initial;
+      if(parts[0] !== "") {
+        return initial;
+      } else {
+        return null
+      }
     }, {});
 };
+
+export const getHashParams = () => {
+  const hashParams = {};
+  let e;
+  const r = /([^&;=]+)=?([^&;]*)/g;
+  const q = window.location.hash.substring(1);
+  while ((e = r.exec(q))) {
+    hashParams[e[1]] = decodeURIComponent(e[2]);
+  }
+  return hashParams;
+};
+
+export const getUserInfo = () =>  {
+    return spotifyWebApi.getMe();
+}
 
 export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}
 &scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;

@@ -1,19 +1,36 @@
+import React, {Component} from "react";
 import './App.css';
-import {Route, Switch} from "react-router-dom";
 import Login from "./components/Login";
-import Home from "./components/Home";
+import User from "./components/User";
+import {getTokenFromResponse} from "./utils/spotify";
 
+class App extends Component {
 
-function App() {
-  return (
-    <div className="App">
-      <Switch>
-        <Route exact path="/" render={() => {return <Login />} } />
-        <Route exact path="/home" render={() => {return <Home />} } />
-      </Switch>
-        
-    </div>
-  );
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      token: ""
+    }
+  }
+
+  componentDidMount() {
+         this.setState({
+           token: getTokenFromResponse()
+         });
+  }
+
+  render() {
+
+    const {token} = this.state;
+
+    return (
+      <div className="App">
+        {token ? <User /> : <Login />}
+      </div>
+    );
+  }
+
 }
 
 export default App;

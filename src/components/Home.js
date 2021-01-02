@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./Home.css";
 import Spotify from "spotify-web-api-js";
+import Navbar from "./Navbar";
 
 const spotifyWebApi = new Spotify();
 class Home extends Component {
@@ -43,7 +44,11 @@ class Home extends Component {
 
     render() {
         return(
-            <div className="Home">Home Spotify Stats</div>
+            <div>
+                <Navbar />
+                <div className="Home">Home Spotify Stats</div>
+            </div>
+            
         )
     }
 }
