@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "./User.css";
 import Navbar from "./Navbar";
 import Routes from "./Routes";
-import {getHashParams, getUserInfo, spotifyWebApi} from "../utils/spotify";
+import {getHashParams, getUserInfo} from "../utils/spotify";
 
 
 class User extends Component {
@@ -14,7 +14,7 @@ class User extends Component {
         console.log(params)
 
         if(params.access_token) {
-            spotifyWebApi.setAccessToken(params.access_token);
+
             getUserInfo();
             window.location.hash = "";
         }

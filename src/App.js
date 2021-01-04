@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import './App.css';
 import Login from "./components/Login";
 import User from "./components/User";
-import {getTokenFromResponse} from "./utils/spotify";
+import {checkToken} from "./utils/spotify";
 
 class App extends Component {
 
@@ -15,14 +15,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-         this.setState({
-           token: getTokenFromResponse()
+    this.setState({
+           token: checkToken()
          });
   }
 
   render() {
 
-    const {token} = this.state;
+    const {token} = this.state;  
 
     return (
       <div className="App">
