@@ -1,6 +1,5 @@
 
-import Spotify from "spotify-web-api-js";
-
+import axios from "axios";
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
 const clientId = process.env.REACT_APP_CLIENT_ID;
@@ -32,9 +31,11 @@ const getLocalToken = () => {
   return window.localStorage.getItem("spotify_localToken");
 }
 
+
 export const setLocalToken = (token) => {
   setTokenTimestamp();
   window.localStorage.setItem("spotify_localToken", token);
+  window.location.hash = "";
 }
 
 export const checkToken = () => {
@@ -45,7 +46,7 @@ export const checkToken = () => {
     const params = getHashParams();
     if(params.access_token) {
       setLocalToken(params.access_token);
-      spotifyWebApi.setAccessToken(params.access_token);
+      console.log("Setting access token")
       return params.access_token;
     } else {
       return null;
@@ -54,7 +55,6 @@ export const checkToken = () => {
 }
 
 
-export const spotifyWebApi = new Spotify();
 
 export const getTokenFromResponse = () => {
   return window.location.hash
@@ -82,9 +82,16 @@ export const getHashParams = () => {
   return hashParams;
 };
 
-export const getUserInfo = () =>  {
-    return spotifyWebApi.getMe();
+
+
+export const getUserInfo = async () =>  {
+  const headers = {
+    Authorization: `Bearer ${getLocalToken()}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.get("https://api.spotify.com/v1/me", {headers});
 }
+
 
 export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}
 &scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;

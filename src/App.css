@@ -29,6 +29,7 @@
   font-family: "Vadodara Medium";
   background-color: #181818;
   color: #fff;
+  min-height: 100vh;
 }
 
 h1 {
