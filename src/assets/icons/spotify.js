@@ -2,6 +2,7 @@ import React from 'react';
 
 const IconSpotify = () => (
   <svg
+	id="spotify-icon"
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     x="0px"

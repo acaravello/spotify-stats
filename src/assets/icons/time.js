@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IconTime = () => (
-  <svg
+  <svg id="time-icon"
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     x="0px"

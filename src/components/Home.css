@@ -35,3 +35,12 @@
     font-family: 'Vadodara Light';
     cursor: default;
 }
+
+.Img-Container {
+    opacity: 1;
+    transition: opacity linear 500ms;
+}
+
+.Img-Container:hover {
+    opacity: 0.8;
+}

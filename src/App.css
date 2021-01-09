@@ -27,7 +27,8 @@
 .App {
   text-align: center;
   font-family: "Vadodara Medium";
-  background-color: #181818;
+  background-color: #121212;
+  background-image: linear-gradient(rgba(0,0,0,.6),#121212);
   color: #fff;
   min-height: 100vh;
 }

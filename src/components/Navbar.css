@@ -10,8 +10,85 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 100px;
+    width: 150px;
     background-color: rgb(4, 3, 6);
     text-align: center;
     z-index: 99;
+}
+
+.navbar-nav {
+    width: 100px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+svg {
+    fill: #fff;
+    width: 17px;
+    margin-right: 6px;
+    opacity: 0.7;
+    transition: opacity linear 500ms;
+}
+
+#time-icon, #playlist-icon {
+    margin-top: -3px;
+}
+
+#user-icon {
+    width: 15px;
+    margin-top: -5px;
+    margin-right: 8px;
+}
+
+#microphone-icon {
+    margin-right: 3px;
+}
+
+.nav-item:hover svg, .nav-item:hover a {
+    opacity: 1;
+}
+
+.nav-item a {
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Vadodara Regular';
+    opacity: 0.7;
+    transition: opacity linear 500ms;
+}
+
+.nav-item a.active, .nav-item a.active svg {
+    opacity: 1;
+}
+
+.spotify-link {
+    display: flex;
+    height: 50px;
+}
+
+#spotify-icon {
+    width: 25px;
+    margin-right: 0px;
+    opacity: 0.8;
+    fill: #1ED760;
+    transition: opacity linear 500ms;
+}
+
+#spotify-icon:hover {
+    opacity: 1;
+}
+
+.Navbar-Title {
+    height: 60px;
+    display: flex;
+    align-items: flex-end;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: default;
+    margin-bottom: -2px;
+    font-size: 14px;
 }
