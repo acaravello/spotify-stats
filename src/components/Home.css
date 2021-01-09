@@ -44,3 +44,37 @@
 .Img-Container:hover {
     opacity: 0.8;
 }
+
+.User-Type {
+    margin-top: 10px;
+    font-family: 'Vadodara Light';
+    font-size: 15px;
+    color: #1ED760;
+    text-transform: uppercase;
+    cursor: default;
+    margin-bottom: -5px;
+}
+
+.User-Info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.Info {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.info-title {
+    margin-bottom: 2px;
+    cursor: default;
+}
+
+.info-value {
+    color: #9b9b9b;
+    cursor: default;
+}

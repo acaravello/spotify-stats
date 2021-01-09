@@ -30,13 +30,42 @@ class Home extends Component {
                             }
                        
                         <div className="Name-Container">
-                            <div className="Title">
-                                profile
-                            </div>
+                            {userInfo.product && 
+                                <div className="User-Type">{userInfo.product} user</div>
+                            }
+
                             <div className="Name">
                                 {userInfo.display_name}
                             </div>
+
+                            <div className="User-Info">
+                                <div className="Info">
+                                    {userInfo.followers &&
+                                        <div className="Info-El">
+                                            <div className="info-title">Followers</div>
+                                            <div className="info-value">{userInfo.followers.total}</div>
+                                        </div>
+                                    }
+                                </div>
+                                <div className="Info">
+                                    {userInfo.artists &&
+                                        <div className="Info-El">
+                                            <div className="info-title">Following</div>
+                                            <div className="info-value">{userInfo.artists}</div>
+                                        </div>
+                                    }
+                                </div>
+
+                                <div className="Info">
+                                    {userInfo.playlists &&
+                                        <div className="Info-El">
+                                            <div className="info-title">Playlists</div>
+                                            <div className="info-value">{userInfo.playlists}</div>
+                                        </div>
+                                    }
+                                </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -2,13 +2,15 @@ import React, {Component} from "react";
 import "./User.css";
 import Navbar from "./Navbar";
 import Routes from "./Routes";
-import { getUserInfo } from "../utils/spotify";
+import { getUserInfo, getUserPlaylists, getUserArtists } from "../utils/spotify";
 
 class User extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userInfo: {}
+            userInfo: {},
+            playlists: 0,
+            artists: 0
         }
     }
 
@@ -18,8 +20,16 @@ class User extends Component {
 
     async getInfo() {
         const data = await getUserInfo();
+        const playlists = await getUserPlaylists();
+        const artists = await getUserArtists();
         let dataRetrieved = data.data;
-        this.setState({userInfo: {...dataRetrieved}});
+        this.setState({
+            userInfo: {
+                ...dataRetrieved, 
+                playlists: playlists.data.total, 
+                artists: artists.data.artists.total
+            }
+        });
     }
 
 

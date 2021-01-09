@@ -92,6 +92,22 @@ export const getUserInfo = async () =>  {
   return axios.get("https://api.spotify.com/v1/me", {headers});
 }
 
+export const getUserPlaylists= async () => {
+  const headers = {
+    Authorization: `Bearer ${getLocalToken()}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.get("https://api.spotify.com/v1/me/playlists", {headers})
+}
+
+export const getUserArtists= async () => {
+  const headers = {
+    Authorization: `Bearer ${getLocalToken()}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.get("https://api.spotify.com/v1/me/following?type=artist", {headers})
+}
+
 
 export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}
 &scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;
