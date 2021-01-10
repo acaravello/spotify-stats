@@ -108,6 +108,55 @@ export const getUserArtists= async () => {
   return axios.get("https://api.spotify.com/v1/me/following?type=artist", {headers})
 }
 
+//Artists
+export const getTopArtists4Weeks = () => {
+  const headers = {
+    Authorization: `Bearer ${getLocalToken()}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.get("https://api.spotify.com/v1/me/top/artists?limit=50&time_range=short_term", {headers});
+}
+
+export const getTopArtists6Months = () => {
+  const headers = {
+    Authorization: `Bearer ${getLocalToken()}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.get("https://api.spotify.com/v1/me/top/artists?limit=50&time_range=medium_term", {headers});
+}
+
+export const getTopArtistsAllTimes = (limit = 50) => {
+  const headers = {
+    Authorization: `Bearer ${getLocalToken()}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.get(`https://api.spotify.com/v1/me/top/artists?limit=${limit}&time_range=long_term`, {headers});
+}
+
+//Tracks
+export const getTopTracks4Weeks = () => {
+  const headers = {
+    Authorization: `Bearer ${getLocalToken()}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.get("https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=short_term", {headers});
+}
+
+export const getTopTracks6Months = () => {
+  const headers = {
+    Authorization: `Bearer ${getLocalToken()}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.get("https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=medium_term", {headers});
+}
+
+export const getTopTracksAllTimes = (limit = 50) => {
+  const headers = {
+    Authorization: `Bearer ${getLocalToken()}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.get(`https://api.spotify.com/v1/me/top/tracks?limit=${limit}&time_range=long_term`, {headers});
+}
 
 export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}
 &scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;

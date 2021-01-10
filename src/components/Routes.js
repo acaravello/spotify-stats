@@ -16,10 +16,12 @@ class Routes extends Component {
     }
     render() {
 
-        const {userInfo} = this.props;
+        const {userInfo, topArtists, topTracks} = this.props;
         return(
             <Switch>
-            <Route exact path="/home" render={() => <Home userInfo={userInfo}/>} />
+            <Route exact path="/home" render={(routeProps) => <Home 
+            userInfo={userInfo} topArtists={topArtists} topTracks={topTracks} {...routeProps}/>} 
+            />
             <Route exact path="/artists" render={() => <Artists /> } />
             <Route exact path="/tracks" render={() => <Tracks /> } />
             <Route exact path="/playlists" render={() => <Playlists /> } />

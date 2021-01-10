@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "./User.css";
 import Navbar from "./Navbar";
 import Routes from "./Routes";
-import { getUserInfo, getUserPlaylists, getUserArtists } from "../utils/spotify";
+import { getUserInfo, getUserPlaylists, getUserArtists, getTopArtistsAllTimes, getTopTracksAllTimes } from "../utils/spotify";
 
 class User extends Component {
     constructor(props) {
@@ -10,7 +10,9 @@ class User extends Component {
         this.state = {
             userInfo: {},
             playlists: 0,
-            artists: 0
+            artists: 0,
+            topTracks: {},
+            topArtists: {}
         }
     }
 
@@ -19,28 +21,39 @@ class User extends Component {
     }
 
     async getInfo() {
-        const data = await getUserInfo();
-        const playlists = await getUserPlaylists();
-        const artists = await getUserArtists();
+        
+        const [data, playlists, artists, topArtists, topTracks] =  await Promise.all([
+                getUserInfo(), 
+                getUserPlaylists(), 
+                getUserArtists(), 
+                getTopArtistsAllTimes(10), 
+                getTopTracksAllTimes(10)
+            ]);
+            
+        console.log("TOp tracks");
+        console.log(topTracks)
+
         let dataRetrieved = data.data;
         this.setState({
             userInfo: {
                 ...dataRetrieved, 
                 playlists: playlists.data.total, 
-                artists: artists.data.artists.total
-            }
+                artists: artists.data.artists.total,
+            },
+            topTracks: topTracks.data,
+            topArtists: topArtists.data
         });
     }
 
 
     render() {
 
-        const {userInfo} = this.state;
+        const {userInfo, topArtists, topTracks} = this.state;
 
         return(
             <div className="User">
                 <Navbar />
-                <Routes userInfo={userInfo}/>
+                <Routes userInfo={userInfo} topArtists={topArtists} topTracks={topTracks}/>
             </div>
             
         )

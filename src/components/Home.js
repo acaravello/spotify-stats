@@ -3,17 +3,18 @@ import "./Home.css";
 import Navbar from "./Navbar";
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
+
+    toTopArtists() {
+        this.props.history.push(`/artists`);
     }
 
+    toTopTracks() {
+        this.props.history.push(`/tracks`);
+    }
 
     render() {
 
-        const {userInfo} = this.props;
-
-        console.log("User Info are");
-        console.log(userInfo)
+        const {userInfo, topArtists, topTracks} = this.props;
 
         return(
             <div>
@@ -22,7 +23,7 @@ class Home extends Component {
                     <div className="Home-Header">
 
                             {userInfo.external_urls &&
-                            <a target="_blank" href={userInfo.external_urls.spotify}>
+                            <a target="_blank" rel="noreferrer" href={userInfo.external_urls.spotify}>
                             <div className="Img-Container" >
                             {userInfo.images &&  <img src={userInfo.images[0].url} alt="profile_image" className="Profile-Image"/> }
                             </div>
@@ -63,6 +64,52 @@ class Home extends Component {
                                             <div className="info-value">{userInfo.playlists}</div>
                                         </div>
                                     }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="Home-Body">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-sm-12 col-md-6">
+                                    <div className="col-11">
+                                        <div className="Body-Section">
+                                            <div className="Header">
+                                                <div className="Body-Title">Top Artists</div>
+                                                <button className="MoreButton" onClick={() => this.toTopArtists()}>More</button>
+                                            </div>
+                                            <div className="Body-List">
+                                                {topArtists && topArtists.items && topArtists.items.map((artist, index) => {
+                                                    return (
+                                                        <div className="Artist-Element" key={index}>
+                                                            <a className="Artist-Link" href={artist.external_urls.spotify} target="_blank" rel="noreferrer">
+                                                            <div className="Artist-Image">
+                                                                <img src={artist.images[0].url}  alt={artist.name}/>
+                                                                </div>
+                                                            <div className="Artist-Name">{artist.name}</div>
+                                                            </a>
+                                                        </div>
+                                                        
+                                                    )
+                                                })}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-sm-12 col-md-6">
+                                    <div className="col-11">
+                                        <div className="Body-Section">
+                                            <div className="Header">
+                                                <div className="Body-Title">Top Tracks</div>
+                                                <button className="MoreButton" onClick={() => this.toTopTracks()} >More</button>
+                                            </div>
+                                            <div className="Body-List">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
