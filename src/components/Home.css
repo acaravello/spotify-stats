@@ -128,14 +128,14 @@
     margin-top: 30px;
 }
 
-.Artist-Element {
+.Artist-Element, .Track-Element {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.Artist-Link {
+.Artist-Link, .Track-Link {
     display: flex;
     color: #fff;
     align-items: center;
@@ -143,7 +143,7 @@
     opacity: 1;
 }
 
-.Artist-Link:hover {
+.Artist-Link:hover, .Track-Link:hover {
     color: #fff;
     text-decoration: none;
     opacity: 0.8;
@@ -155,7 +155,34 @@
     border-radius: 100%;
 }
 
-.Artist-Name {
+.Album-Image img {
+    width: 60px;
+    height: auto;
+}
+
+.Artist-Name, .Track-Name {
+    display: flex;
     margin-left: 30px;
     font-family: 'Vadodara Medium';
+}
+
+.Track-Info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.Track-SecondaryInfo {
+    display: flex;
+    margin-left: 30px;
+    color: #9b9b9b;
+    font-size: 14px;
+    font-family: 'Vadodara Medium';
+    flex-wrap: wrap;
+}
+
+.Separator {
+    padding-left: 10px;
+    padding-right: 10px;
 }

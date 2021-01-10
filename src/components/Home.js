@@ -105,7 +105,25 @@ class Home extends Component {
                                                 <button className="MoreButton" onClick={() => this.toTopTracks()} >More</button>
                                             </div>
                                             <div className="Body-List">
+                                            {topTracks && topTracks.items && topTracks.items.map((track, index) => {
+                                                    return (
+                                                        <div className="Track-Element" key={index}>
+                                                            <a className="Track-Link" href={track.external_urls.spotify} target="_blank" rel="noreferrer">
+                                                                <div className="Album-Image">
+                                                                    <img src={track.album.images[0].url} alt={track.artists[0].name} />
+                                                                </div>
+                                                                <div className="Track-Info">
+                                                                    <div className="Track-Name">{track.name}</div>
+                                                                    <div className="Track-SecondaryInfo">
+                                                                        {track.artists[0].name} <div className="Separator">·</div> {track.album.name}
+                                                                    </div>
+                                                                </div>
 
+                                                            </a>
+                                                        </div>
+                                                        
+                                                    )
+                                                })}
                                             </div>
 
                                         </div>
