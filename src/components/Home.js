@@ -80,7 +80,7 @@ class Home extends Component {
                                                 <button className="MoreButton" onClick={() => this.toTopArtists()}>More</button>
                                             </div>
                                             <div className="Body-List">
-                                                {topArtists && topArtists.items && topArtists.items.map((artist, index) => {
+                                                {topArtists && topArtists.items && topArtists.items.slice(0, 10).map((artist, index) => {
                                                     return (
                                                         <div className="Artist-Element" key={index}>
                                                             <a className="Artist-Link" href={artist.external_urls.spotify} target="_blank" rel="noreferrer">
@@ -105,7 +105,7 @@ class Home extends Component {
                                                 <button className="MoreButton" onClick={() => this.toTopTracks()} >More</button>
                                             </div>
                                             <div className="Body-List">
-                                            {topTracks && topTracks.items && topTracks.items.map((track, index) => {
+                                            {topTracks && topTracks.items && topTracks.items.slice(0, 10).map((track, index) => {
                                                     return (
                                                         <div className="Track-Element" key={index}>
                                                             <a className="Track-Link" href={track.external_urls.spotify} target="_blank" rel="noreferrer">

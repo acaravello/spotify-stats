@@ -26,8 +26,8 @@ class User extends Component {
                 getUserInfo(), 
                 getUserPlaylists(), 
                 getUserArtists(), 
-                getTopArtistsAllTimes(10), 
-                getTopTracksAllTimes(10)
+                getTopArtistsAllTimes(), 
+                getTopTracksAllTimes()
             ]);
             
         console.log("TOp tracks");

@@ -65,6 +65,10 @@ svg {
     opacity: 1;
 }
 
+.nav-item a:focus {
+    outline: none;
+}
+
 .spotify-link {
     display: flex;
     height: 50px;

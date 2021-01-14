@@ -125,12 +125,12 @@ export const getTopArtists6Months = () => {
   return axios.get("https://api.spotify.com/v1/me/top/artists?limit=50&time_range=medium_term", {headers});
 }
 
-export const getTopArtistsAllTimes = (limit = 50) => {
+export const getTopArtistsAllTimes = () => {
   const headers = {
     Authorization: `Bearer ${getLocalToken()}`,
     'Content-Type': 'application/json',
   };
-  return axios.get(`https://api.spotify.com/v1/me/top/artists?limit=${limit}&time_range=long_term`, {headers});
+  return axios.get(`https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term`, {headers});
 }
 
 //Tracks
@@ -150,12 +150,12 @@ export const getTopTracks6Months = () => {
   return axios.get("https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=medium_term", {headers});
 }
 
-export const getTopTracksAllTimes = (limit = 50) => {
+export const getTopTracksAllTimes = () => {
   const headers = {
     Authorization: `Bearer ${getLocalToken()}`,
     'Content-Type': 'application/json',
   };
-  return axios.get(`https://api.spotify.com/v1/me/top/tracks?limit=${limit}&time_range=long_term`, {headers});
+  return axios.get(`https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=long_term`, {headers});
 }
 
 export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}
