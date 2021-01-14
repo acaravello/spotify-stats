@@ -24,7 +24,7 @@ class Routes extends Component {
             userInfo={userInfo} topArtists={topArtists} topTracks={topTracks} {...routeProps}/>} 
             />
             <Route exact path="/artists" render={() => <Artists artistsAllTimes={topArtists}/> } />
-            <Route exact path="/tracks" render={() => <Tracks topTracks={topTracks}/> } />
+            <Route exact path="/tracks" render={() => <Tracks tracksAllTimes={topTracks}/> } />
             <Route exact path="/playlists" render={() => <Playlists /> } />
             <Route exact path="/activities" render={() => <Activities /> } />
             <Redirect to="/home" />

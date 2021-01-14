@@ -5,3 +5,92 @@
     max-width: 1400px;
     padding: 80px;
 }
+
+.Tracks-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.Tracks-Body {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Tracks-Element {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.Tracks-Image img {
+    width: 70px;
+    height: auto;
+}
+
+.Tracks-Link {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    transition: opacity linear 500ms;
+    opacity: 1;
+    flex-direction: row;
+}
+
+.Tracks-Link:hover {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.Tracks-Name {
+    display: flex;
+    font-family: 'Vadodara Medium';
+    margin-top: 20px;
+}
+
+.Tracks-Title {
+    display: flex;
+    font-size: 34px;
+    font-family: 'Vadodara Medium';
+    cursor: default;
+}
+
+.RangeSelector-Button {
+    background-color: #1ED760;
+    font-size: 12px;
+    border-radius: 500px;
+    text-transform: uppercase;
+    padding: 12px 38px;
+    border: none;
+    transition: opacity 600ms ease, color 1200ms ease;
+    margin-right: 20px;
+}
+
+.RangeSelector-Button:focus {
+    outline: none;
+}
+
+.RangeSelector-Button:hover, .RangeSelector-Button.active {
+    opacity: 0.9;
+    color: #fff;
+}
+
+.Track-Container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.Track-Length {
+    display: flex;
+    margin-left: 30px;
+    color: #9b9b9b;
+    font-size: 14px;
+    font-family: 'Vadodara Medium';
+    flex-wrap: wrap;
+    cursor: default;
+    align-items: center;
+}
