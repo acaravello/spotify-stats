@@ -41,19 +41,20 @@ class User extends Component {
                 artists: artists.data.artists.total,
             },
             topTracks: topTracks.data,
-            topArtists: topArtists.data
+            topArtists: topArtists.data,
+            playlists: playlists.data
         });
     }
 
 
     render() {
 
-        const {userInfo, topArtists, topTracks} = this.state;
+        const {userInfo, topArtists, topTracks, playlists} = this.state;
 
         return(
             <div className="User">
                 <Navbar />
-                <Routes userInfo={userInfo} topArtists={topArtists} topTracks={topTracks}/>
+                <Routes userInfo={userInfo} topArtists={topArtists} topTracks={topTracks} playlists={playlists}/>
             </div>
             
         )

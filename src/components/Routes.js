@@ -16,7 +16,7 @@ class Routes extends Component {
     }
     render() {
 
-        const {userInfo, topArtists, topTracks} = this.props;
+        const {userInfo, topArtists, topTracks, playlists} = this.props;
 
         return(
             <Switch>
@@ -25,7 +25,7 @@ class Routes extends Component {
             />
             <Route exact path="/artists" render={() => <Artists artistsAllTimes={topArtists}/> } />
             <Route exact path="/tracks" render={() => <Tracks tracksAllTimes={topTracks}/> } />
-            <Route exact path="/playlists" render={() => <Playlists /> } />
+            <Route exact path="/playlists" render={() => <Playlists userPlaylists={playlists} /> } />
             <Route exact path="/activities" render={() => <Activities /> } />
             <Redirect to="/home" />
             </Switch>

@@ -5,3 +5,67 @@
     max-width: 1400px;
     padding: 80px;
 }
+
+.Playlists-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.Playlists-Body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.Playlists-Element {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.Playlists-Image img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+}
+
+.Playlists-Link {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    transition: opacity linear 500ms;
+    opacity: 1;
+    flex-direction: column;
+}
+
+.Playlists-Link:hover {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.Playlists-Name {
+    display: flex;
+    font-family: 'Vadodara Medium';
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.Playlists-Title {
+    display: flex;
+    font-size: 34px;
+    font-family: 'Vadodara Medium';
+    cursor: default;
+}
+
+.Playlists-Tracks {
+    display: flex;
+    color: #9b9b9b;
+    font-size: 14px;
+    font-family: 'Vadodara Medium';
+    flex-wrap: wrap;
+}
