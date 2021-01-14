@@ -5,3 +5,72 @@
     max-width: 1400px;
     padding: 80px;
 }
+
+.Activities-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.Activities-Body {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Activities-Element {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.Activities-Image img {
+    width: 70px;
+    height: auto;
+}
+
+.Activities-Link {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    transition: opacity linear 500ms;
+    opacity: 1;
+    flex-direction: row;
+}
+
+.Activities-Link:hover {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.Activities-Name {
+    display: flex;
+    font-family: 'Vadodara Medium';
+    margin-top: 20px;
+}
+
+.Activities-Title {
+    display: flex;
+    font-size: 34px;
+    font-family: 'Vadodara Medium';
+    cursor: default;
+}
+
+.Activities-Container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.Activities-Length {
+    display: flex;
+    margin-left: 30px;
+    color: #9b9b9b;
+    font-size: 14px;
+    font-family: 'Vadodara Medium';
+    flex-wrap: wrap;
+    cursor: default;
+    align-items: center;
+}

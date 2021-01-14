@@ -46,7 +46,6 @@ export const checkToken = () => {
     const params = getHashParams();
     if(params.access_token) {
       setLocalToken(params.access_token);
-      console.log("Setting access token")
       return params.access_token;
     } else {
       return null;
@@ -107,6 +106,15 @@ export const getUserArtists= async () => {
   };
   return axios.get("https://api.spotify.com/v1/me/following?type=artist", {headers})
 }
+
+export const getRecentTracks= async () => {
+  const headers = {
+    Authorization: `Bearer ${getLocalToken()}`,
+    'Content-Type': 'application/json',
+  };
+  return axios.get("https://api.spotify.com/v1/me/player/recently-played", {headers})
+}
+
 
 //Artists
 export const getTopArtists4Weeks = () => {

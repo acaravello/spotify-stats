@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "./User.css";
 import Navbar from "./Navbar";
 import Routes from "./Routes";
-import { getUserInfo, getUserPlaylists, getUserArtists, getTopArtistsAllTimes, getTopTracksAllTimes } from "../utils/spotify";
+import { getUserInfo, getUserPlaylists, getUserArtists, getTopArtistsAllTimes, getTopTracksAllTimes, getRecentTracks } from "../utils/spotify";
 
 class User extends Component {
     constructor(props) {
@@ -22,17 +22,15 @@ class User extends Component {
 
     async getInfo() {
         
-        const [data, playlists, artists, topArtists, topTracks] =  await Promise.all([
+        const [data, playlists, artists, topArtists, topTracks, recentTracks] =  await Promise.all([
                 getUserInfo(), 
                 getUserPlaylists(), 
                 getUserArtists(), 
                 getTopArtistsAllTimes(), 
-                getTopTracksAllTimes()
+                getTopTracksAllTimes(),
+                getRecentTracks()
             ]);
-            
-        console.log("TOp tracks");
-        console.log(topTracks)
-
+  
         let dataRetrieved = data.data;
         this.setState({
             userInfo: {
@@ -42,19 +40,20 @@ class User extends Component {
             },
             topTracks: topTracks.data,
             topArtists: topArtists.data,
-            playlists: playlists.data
+            playlists: playlists.data,
+            recentTracks: recentTracks.data
         });
     }
 
 
     render() {
 
-        const {userInfo, topArtists, topTracks, playlists} = this.state;
+        const {userInfo, topArtists, topTracks, playlists, recentTracks} = this.state;
 
         return(
             <div className="User">
                 <Navbar />
-                <Routes userInfo={userInfo} topArtists={topArtists} topTracks={topTracks} playlists={playlists}/>
+                <Routes userInfo={userInfo} topArtists={topArtists} topTracks={topTracks} playlists={playlists} recentTracks={recentTracks}/>
             </div>
             
         )

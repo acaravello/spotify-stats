@@ -9,14 +9,9 @@ import Activities from "./Activities";
 
 class Routes extends Component {
 
-    constructor(props) {
-        super(props);
-        console.log("Routes props");
-        console.log(props)
-    }
     render() {
 
-        const {userInfo, topArtists, topTracks, playlists} = this.props;
+        const {userInfo, topArtists, topTracks, playlists, recentTracks} = this.props;
 
         return(
             <Switch>
@@ -26,7 +21,7 @@ class Routes extends Component {
             <Route exact path="/artists" render={() => <Artists artistsAllTimes={topArtists}/> } />
             <Route exact path="/tracks" render={() => <Tracks tracksAllTimes={topTracks}/> } />
             <Route exact path="/playlists" render={() => <Playlists userPlaylists={playlists} /> } />
-            <Route exact path="/activities" render={() => <Activities /> } />
+            <Route exact path="/activities" render={() => <Activities recentTracks={recentTracks} /> } />
             <Redirect to="/home" />
             </Switch>
         )
