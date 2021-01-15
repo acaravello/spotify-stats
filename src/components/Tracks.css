@@ -11,6 +11,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 120px;
+    flex-direction: row;
 }
 
 .Tracks-Body {
@@ -56,6 +57,13 @@
     font-size: 34px;
     font-family: 'Vadodara Medium';
     cursor: default;
+    margin-bottom: 0px;
+}
+
+.Track-Container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .RangeSelector-Button {
@@ -78,12 +86,6 @@
     color: #fff;
 }
 
-.Track-Container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
 .Track-Length {
     display: flex;
     margin-left: 30px;
@@ -94,3 +96,38 @@
     cursor: default;
     align-items: center;
 }
+
+@media(max-width: 1199px) {
+
+    .Tracks {
+        padding: 80px 40px;
+    }
+
+    .Tracks-RangeSelector {
+        display: flex;
+        flex-direction: column;
+    }
+    .RangeSelector-Button {
+        padding: 10px 18px;
+        margin-bottom: 12px;
+        margin-right: 0px;
+    }
+
+    .Tracks-Header {
+        flex-direction: column;
+        margin-bottom: 80px;
+    }
+
+    .Tracks-Title {
+        margin-bottom: 20px;
+    }
+
+}
+
+@media(max-width: 499px) {
+    .RangeSelector-Button {
+        padding: 10px 12px;
+        font-size: 10px;
+    }
+}
+

@@ -25,7 +25,7 @@ class Home extends Component {
                             {userInfo.external_urls &&
                             <a target="_blank" rel="noreferrer" href={userInfo.external_urls.spotify}>
                             <div className="Img-Container" >
-                            {userInfo.images &&  <img src={userInfo.images[0].url} alt="profile_image" className="Profile-Image"/> }
+                            {userInfo.images && userInfo.images[0] && <img src={userInfo.images[0].url} alt="profile_image" className="Profile-Image"/> }
                             </div>
                             </a>
                             }
@@ -40,31 +40,34 @@ class Home extends Component {
                             </div>
 
                             <div className="User-Info">
+                            {userInfo.followers &&
                                 <div className="Info">
-                                    {userInfo.followers &&
+                                    
                                         <div className="Info-El">
                                             <div className="info-title">Followers</div>
                                             <div className="info-value">{userInfo.followers.total}</div>
                                         </div>
-                                    }
                                 </div>
+                                 }
+                                {userInfo.artists &&
                                 <div className="Info">
-                                    {userInfo.artists &&
+                                    
                                         <div className="Info-El">
                                             <div className="info-title">Following</div>
                                             <div className="info-value">{userInfo.artists}</div>
                                         </div>
-                                    }
                                 </div>
+                                 }
 
+                                {userInfo.playlists &&
                                 <div className="Info">
-                                    {userInfo.playlists &&
+                                    
                                         <div className="Info-El">
                                             <div className="info-title">Playlists</div>
                                             <div className="info-value">{userInfo.playlists}</div>
                                         </div>
-                                    }
                                 </div>
+                                 }
                             </div>
                         </div>
                     </div>
@@ -72,8 +75,8 @@ class Home extends Component {
                     <div className="Home-Body">
                         <div className="container">
                             <div className="row">
-                                <div className="col-sm-12 col-md-6">
-                                    <div className="col-11">
+                                <div className="col-md-12 col-lg-6">
+                                    <div className="col-md-12 col-lg-11">
                                         <div className="Body-Section">
                                             <div className="Header">
                                                 <div className="Body-Title">Top Artists</div>
@@ -97,8 +100,8 @@ class Home extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-sm-12 col-md-6">
-                                    <div className="col-11">
+                                <div className="col-md-12 col-lg-6">
+                                    <div className="col-md-12 col-lg-11">
                                         <div className="Body-Section">
                                             <div className="Header">
                                                 <div className="Body-Title">Top Tracks</div>

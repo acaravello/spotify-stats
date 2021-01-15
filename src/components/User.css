@@ -1,3 +1,9 @@
 .User {
     padding-left: 150px;
 }
+
+@media(max-width: 749px) {
+    .User {
+        padding-left: 0px;
+    }
+ }

@@ -74,6 +74,10 @@
     cursor: default;
 }
 
+.Info-El {
+    margin-bottom: 0px;
+}
+
 .info-value {
     color: #9b9b9b;
     cursor: default;
@@ -121,6 +125,13 @@
     color: #fff;
 }
 
+@media(max-width: 1199px) {
+    .MoreButton {
+        padding: 6px 21px;
+        font-size: 12px;
+    }
+}
+
 .Body-List {
     display: flex;
     flex-direction: column;
@@ -164,6 +175,7 @@
     display: flex;
     margin-left: 30px;
     font-family: 'Vadodara Medium';
+    justify-content: flex-start;
 }
 
 .Track-Info {
@@ -180,9 +192,33 @@
     font-size: 14px;
     font-family: 'Vadodara Medium';
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .Separator {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+
+@media(max-width: 1199px) {
+    .Home {
+        padding: 80px 40px;
+    }
+
+    .User-Info {
+        flex-direction: column;
+    }
+
+    .Info-El {
+        margin-bottom: 10px;
+    }
+} 
+
+@media(max-width: 399px) {
+     .Artist-Name, .Track-Name, .Track-SecondaryInfo {
+        justify-content: center;
+    }
+
+
 }

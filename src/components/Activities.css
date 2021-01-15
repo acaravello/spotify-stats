@@ -74,3 +74,13 @@
     cursor: default;
     align-items: center;
 }
+
+@media(max-width: 1199px) {
+    .Activities {
+        padding: 80px 40px;
+    }
+
+    .Activities-Header {
+        margin-bottom: 80px;
+    }
+}

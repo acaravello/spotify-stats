@@ -7,6 +7,7 @@
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
+    min-width: 0vw;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -95,4 +96,38 @@ svg {
     cursor: default;
     margin-bottom: -2px;
     font-size: 14px;
+}
+
+@media(max-width: 749px) {
+    .Navbar {
+        flex-direction: row;
+        top: auto;
+        bottom: 0;
+        min-height: 60px;
+        min-width: 100vw;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .nav-item {
+        margin: auto 10px;
+    }
+
+    .nav-item a{
+        font-size: 12px;
+    }
+
+    .spotify-link {
+        display: none;
+    }
+
+    .Navbar-Title {
+        display: none;
+    }
 }
