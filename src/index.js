@@ -5,11 +5,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
+import ScrollToTop from "./utils/ScrollTop";
 
 
 ReactDOM.render(
     <BrowserRouter>
-    <App />
+      <ScrollToTop>
+        <App />
+      </ScrollToTop>
     </BrowserRouter>
     ,
   document.getElementById('root')
